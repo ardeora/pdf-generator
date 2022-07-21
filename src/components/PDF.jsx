@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   billToHeader: {
     marginRight: '1px',
     marginBottom: '1px',
-    flex: 1,
     fontSize: 10,
     fontWeight: 700,
     backgroundColor: '#E7E7E7',
@@ -113,15 +112,15 @@ const PDF = (props) => (
           marginBottom: '0.5in',
         }}>
           <View style={styles.footer}>
-            <View style={styles.billToHeader}>
-              <View style={{ fontFamily: 'Helvetica-Bold', padding: '6px',flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
+            <View style={{...styles.billToHeader}}>
+              <View style={{ fontFamily: 'Helvetica-Bold', padding: '6px', paddingRight: '0.25in', flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Text>Invoice No.</Text>
               </View>
               <View style={{ fontFamily: 'Helvetica-Bold', padding: '6px',flex: 1, borderTop: '1px solid white', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Text>Date</Text>
               </View>
             </View>
-            <View style={{...styles.billToHeader, fontWeight: 400 }}>
+            <View style={{...styles.billToHeader, fontWeight: 400, flex:1 }}>
               <View style={{ padding: '6px',flex: 1, display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Text>{props['Invoice No.']}</Text>
               </View>
@@ -129,7 +128,7 @@ const PDF = (props) => (
                 <Text>{props.Date}</Text>
               </View>
             </View>
-            <View style={styles.billToHeader}>
+            <View style={{...styles.billToHeader, flex: 2 }}>
               <View style={{ fontFamily: 'Helvetica-Bold', padding: '6px',paddingBottom: '6px', display: 'flex', justifyContent: 'center', flexDirection: 'column' }}>
                 <Text>Bill To</Text>
               </View>
